@@ -9,16 +9,21 @@
         public DateTime FechaTransaccion { get; set; } // Fecha de la transferencia
         public string Estado { get; set; }     // Estado de la transacción
         public string? Descripcion { get; set; }
-
+        public string numeroCuentaOrigen { get; set; }
+        public string numeroCuentaDestino { get; set; }
         public Transacciones()
         {
+            numeroCuentaDestino = "";
+            numeroCuentaOrigen = "";
             FechaTransaccion = DateTime.Now;
             Estado = "En Proceso"; // Estado inicial
         }
 
         // Constructor parametrizado
-        public Transacciones(int transaccionID, int cuentaOrigenID, int cuentaDestinoID, decimal monto, DateTime fechaTransaccion, string estado, string descripcion)
+        public Transacciones(string numeroCuentaDestinoo, string numeroCuentaOrigenn, int transaccionID, int cuentaOrigenID, int cuentaDestinoID, decimal monto, DateTime fechaTransaccion, string estado, string descripcion)
         {
+            this.numeroCuentaDestino = numeroCuentaDestinoo;
+            this.numeroCuentaOrigen = numeroCuentaOrigenn;
             TransaccionID = transaccionID;
             CuentaOrigenID = cuentaOrigenID;
             CuentaDestinoID = cuentaDestinoID;

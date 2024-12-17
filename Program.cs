@@ -13,6 +13,23 @@ builder.Services.AddControllers();
 // Configurar Swagger para la documentación de la API
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddCors(options =>
+{
+
+    options.AddPolicy("AllowAll",
+
+        policy =>
+        {
+
+            policy.AllowAnyOrigin()
+
+                  .AllowAnyHeader()
+
+                  .AllowAnyMethod();
+
+        });
+
+});
 
 var app = builder.Build();
 
@@ -24,7 +41,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
+// Habilita CORS antes de Authorization
+app.UseCors("AllowAll");
 app.UseAuthorization();
 
 app.MapControllers();

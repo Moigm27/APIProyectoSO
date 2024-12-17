@@ -11,15 +11,24 @@
         // Email único del usuario
         public string Email { get; set; }
 
+        // Contraseña del usuario
+        public string contrasena { get; set; }
+
         // Fecha de registro del usuario
         public DateTime FechaRegistro { get; set; }
 
-        public Usuarios(int usuarioID, string nombre, string email, DateTime fechaRegistro)
+        // Constructor por defecto requerido por Entity Framework
+        public Usuarios()
         {
-            UsuarioID = usuarioID;
+        }
+
+        // Constructor parametrizado
+        public Usuarios(string nombre, string email, DateTime fechaRegistro, string contrasena)
+        {
             Nombre = nombre;
             Email = email;
             FechaRegistro = fechaRegistro;
+            this.contrasena = contrasena;
         }
     }
 }

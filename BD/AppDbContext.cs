@@ -13,7 +13,7 @@ namespace SistemaBancario.Data
         public DbSet<Usuarios> Usuarios { get; set; }
         public DbSet<Cuentas> Cuentas { get; set; }
         public DbSet<Transacciones> Transacciones { get; set; }
-        public DbSet<LogIn> Logs { get; set; }
+        public DbSet<LogIn> LogIn { get; set; }
         
         // Configuración adicional del modelo (opcional)
         protected override void OnModelCreating(ModelBuilder modelBuilder)
