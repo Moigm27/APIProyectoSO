@@ -13,7 +13,6 @@ namespace SistemaBancario.Data
         public DbSet<Usuarios> Usuarios { get; set; }
         public DbSet<Cuentas> Cuentas { get; set; }
         public DbSet<Transacciones> Transacciones { get; set; }
-        public DbSet<LogIn> LogIn { get; set; }
         
         // Configuración adicional del modelo (opcional)
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -28,10 +27,7 @@ namespace SistemaBancario.Data
                 .HasKey(c => c.CuentaID); // Clave primaria para la tabla Cuentas
 
             modelBuilder.Entity<Transacciones>()
-                .HasKey(t => t.TransaccionID); // Clave primaria para la tabla Transacciones
-
-            modelBuilder.Entity<LogIn>()
-                .HasKey(l => l.LogID); // Clave primaria para la tabla Logs
+                .HasKey(t => t.TransaccionID); // Clave primaria para la tabla Transacciones            
 
             // Relaciones (Foreign Keys)
             modelBuilder.Entity<Cuentas>()

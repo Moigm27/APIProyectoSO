@@ -27,11 +27,7 @@
             FechaCreacion = fechaCreacion;
             this.TipoCuenta = TipoCuenta;
         }
-
-        public override string ToString()
-        {
-            return $"CuentaID: {CuentaID}, UsuarioID: {UsuarioID}, NumeroCuenta: {NumeroCuenta}, Saldo: {Saldo}, FechaCreacion: {FechaCreacion}";
-        }
+        
     }
 
 }
